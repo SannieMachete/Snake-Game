@@ -1,0 +1,92 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background: #1a1a1a;
+      color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    #game-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem;
+    }
+
+    #score-bar {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    .stat { text-align: center; }
+    .stat-label { font-size: 11px; color: #888; letter-spacing: 0.06em; text-transform: uppercase; }
+    .stat-val { font-size: 24px; font-weight: 500; color: #f0f0f0; }
+
+    #canvas-wrap { position: relative; }
+
+    #canvas {
+      display: block;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background: #111;
+    }
+
+    #overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: rgba(0,0,0,0.6);
+    }
+
+    #msg-box {
+      background: #222;
+      border: 1px solid #444;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      min-width: 200px;
+    }
+
+    #msg-title { font-size: 22px; font-weight: 500; margin-bottom: 6px; }
+    #msg-sub { font-size: 14px; color: #888; margin-bottom: 1.25rem; }
+
+    button {
+      background: transparent;
+      color: #f0f0f0;
+      border: 1px solid #555;
+      border-radius: 8px;
+      padding: 8px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    button:hover { background: #333; }
+    button:active { transform: scale(0.98); }
+
+    #dpad {
+      display: grid;
+      grid-template-columns: repeat(3, 44px);
+      grid-template-rows: repeat(3, 44px);
+      gap: 4px;
+    }
+
+    .dp {
+      width: 44px; height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid #444;
+      border-radius: 8px;
+      background: #222;
+      cursor: pointer;
+      font-size: 16px;
+      user-select: none;
+    }
+    .dp:active { background: #333; }
+    .dp.empty { border: none; background: transparent; pointer-events: none; }
